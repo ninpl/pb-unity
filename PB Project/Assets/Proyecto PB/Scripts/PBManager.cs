@@ -111,7 +111,26 @@ namespace MoonAntonio
 
 				case Tipos.Mascara:
 					#region Mascara Core
+					// Si el tiempo pasado es menor a lo acordado
+					if (tiempoActual < 100)
+					{
+						// Actualizar tiempo y texto del PB
+						tiempoActual = tiempoActual + velocidad * Time.deltaTime;
+						textoBar.text = tiempoActual.ToString("F0") + "%";
+						Debug.Log(tiempoActual.ToString() + " % ...");
+					}
+					else
+					{
+						// Si el tiempo pasado es mayor al acordado, actualizar texto
+						textoBar.text = "Completado";
+						Debug.Log("Completado");
 
+						// TODO Test (Borrar para produccion)
+						StartCoroutine(SaltarEscena());
+					}
+
+					// Actualizar progress bar
+					bar.fillAmount = tiempoActual / 100;
 					#endregion
 					break;
 

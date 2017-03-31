@@ -10,3 +10,10 @@ Experimentando con las diferentes tecnicas de progress bars (Unity5)
 ---
 
 <p align="center"><img src=""></p>
+
+
+## Licencia
+
++ [Pixeden][1] Mascara
+
+[1]: http://www.pixeden.com/psd-web-elements/radial-creative-diagrams-psd
