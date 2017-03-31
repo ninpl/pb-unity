@@ -9,7 +9,7 @@ Experimentando con las diferentes tecnicas de progress bars (Unity5)
 
 ---
 
-<p align="center"><img src=""></p>
+<p align="center"><img src="https://github.com/MoonAntonio/pb-unity/blob/master/Res/prev.gif?raw=true"></p>
 
 
 ## Licencia
