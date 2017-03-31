@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 223883475927228998}
   - component: {fileID: 114414599612270164}
   - component: {fileID: 114906193541676976}
+  - component: {fileID: 114143762806604040}
   m_Layer: 5
   m_Name: Radial UI
   m_TagString: Untagged
@@ -99,6 +100,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114143762806604040
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1738498530424650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c97a5ad73e32d447981ca8f5e183916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipo: 0
+  bar: {fileID: 114531186930993598}
+  textoBar: {fileID: 114605455273171430}
+  scene: Normal
 --- !u!114 &114156919273532508
 MonoBehaviour:
   m_ObjectHideFlags: 1
