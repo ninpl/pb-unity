@@ -57,26 +57,49 @@ namespace MoonAntonio
 		/// </summary>
 		private void Update()// Actualizador de PBManager
 		{
-			// Si el tiempo pasado es menor a lo acordado
-			if (tiempoActual < 100)
+			switch (tipo)
 			{
-				// Actualizar tiempo y texto del PB
-				tiempoActual = tiempoActual + velocidad * Time.deltaTime;
-				textoBar.text = tiempoActual.ToString("F0") + "%";
-				Debug.Log(tiempoActual.ToString() + " % ...");
-			}
-			else
-			{
-				// Si el tiempo pasado es mayor al acordado, actualizar texto
-				textoBar.text = "Completado";
-				Debug.Log("Completado");
+				case Tipos.Normal:
+					#region Normal Core
 
-				// TODO Test (Borrar para produccion)
-				StartCoroutine(SaltarEscena());
-			}
+					#endregion
+					break;
 
-			// Actualizar progress bar
-			bar.fillAmount = tiempoActual / 100;
+				case Tipos.Radial:
+					#region Radial Core
+					// Si el tiempo pasado es menor a lo acordado
+					if (tiempoActual < 100)
+					{
+						// Actualizar tiempo y texto del PB
+						tiempoActual = tiempoActual + velocidad * Time.deltaTime;
+						textoBar.text = tiempoActual.ToString("F0") + "%";
+						Debug.Log(tiempoActual.ToString() + " % ...");
+					}
+					else
+					{
+						// Si el tiempo pasado es mayor al acordado, actualizar texto
+						textoBar.text = "Completado";
+						Debug.Log("Completado");
+
+						// TODO Test (Borrar para produccion)
+						StartCoroutine(SaltarEscena());
+					}
+
+					// Actualizar progress bar
+					bar.fillAmount = tiempoActual / 100;
+					#endregion
+					break;
+
+				case Tipos.Mascara:
+					#region Mascara Core
+
+					#endregion
+					break;
+
+				default:
+					Debug.LogWarning("<color=yellow>[WAR]</color> La variable 'Tipo' tiene un valor desconocido.");
+					break;
+			}
 		}
 
 		#region Test (Borrar para Produccion)
@@ -96,7 +119,7 @@ namespace MoonAntonio
 	public enum Tipos
 	{
 		Radial,
-		Horizontal,
+		Normal,
 		Mascara
 	}
 }
