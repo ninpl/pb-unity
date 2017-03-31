@@ -6,6 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Proyecto PB/Escenas/Normal.unity
+  - enabled: 1
     path: Assets/Proyecto PB/Escenas/Circular.unity
   - enabled: 1
-    path: Assets/Proyecto PB/Escenas/Normal.unity
+    path: Assets/Proyecto PB/Escenas/Mascara.unity

@@ -61,7 +61,26 @@ namespace MoonAntonio
 			{
 				case Tipos.Normal:
 					#region Normal Core
+					// Si el tiempo pasado es menor a lo acordado
+					if (tiempoActual < 100)
+					{
+						// Actualizar tiempo y texto del PB
+						tiempoActual = tiempoActual + velocidad * Time.deltaTime;
+						textoBar.text = tiempoActual.ToString("F0") + "%";
+						Debug.Log(tiempoActual.ToString() + " % ...");
+					}
+					else
+					{
+						// Si el tiempo pasado es mayor al acordado, actualizar texto
+						textoBar.text = "Completado";
+						Debug.Log("Completado");
 
+						// TODO Test (Borrar para produccion)
+						StartCoroutine(SaltarEscena());
+					}
+
+					// Actualizar progress bar
+					bar.fillAmount = tiempoActual / 100;
 					#endregion
 					break;
 
@@ -107,7 +126,7 @@ namespace MoonAntonio
 		{
 			yield return new WaitForSeconds(1f);
 
-			SceneManager.LoadScene(scene);
+			if(scene != string.Empty) SceneManager.LoadScene(scene);
 		}
 		#endregion
 		#endregion
